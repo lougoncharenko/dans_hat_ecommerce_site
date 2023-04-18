@@ -14,9 +14,10 @@
 - `npm start` Runs the app in the development mode.
 
 ## Resources
-- [Reactstrap](https://reactstrap.github.io/?path=/story/home-installation--page) for components
-- [React-redux](https://react-redux.js.org)
-- [Google Fonts](https://fonts.google.com/) for fonts
+- [React Router](https://www.npmjs.com/package/react-router-dom)
+- [Polaris](https://polaris.shopify.com/) 
+- [React-redux](https://react-redux.js.org) 
+- [Google Fonts](https://fonts.google.com/) 
 
 ## Features
 
