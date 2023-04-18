@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const ProductDetail = () => {
-  return (
-    <div>ProductDetail</div>
-  )
+export interface IProductDetailsProps {};
+
+const ProductDetails: React.FunctionComponent<IProductDetailsProps> = props => {
+  return <div>Product Details</div>
 }
 
-export default ProductDetail
+export default ProductDetails
