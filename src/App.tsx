@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
 import Router from './routes/Router';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
     <section>
-      <h1>Dan's hats</h1>
+      <Navigation />
       <Router/>
     </section>
   );
