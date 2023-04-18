@@ -1,0 +1,82 @@
+{
+  "hats": [
+    {
+      "name": "Fedora",
+      "description": "A classic fedora made of wool felt.",
+      "price": 39.99,
+      "image": "https://images.unsplash.com/photo-1566732495863-5c5aafcd3b3c"
+    },
+    {
+      "name": "Baseball Cap",
+      "description": "A simple cotton baseball cap with an adjustable strap.",
+      "price": 14.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Beanie",
+      "description": "A cozy beanie made of soft acrylic yarn.",
+      "price": 19.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Bucket Hat",
+      "description": "A trendy bucket hat made of cotton twill.",
+      "price": 24.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Cowboy Hat",
+      "description": "A rugged cowboy hat made of genuine leather.",
+      "price": 69.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Flat Cap",
+      "description": "A stylish flat cap made of wool blend fabric.",
+      "price": 29.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Panama Hat",
+      "description": "A classic Panama hat made of toquilla straw.",
+      "price": 49.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Trilby",
+      "description": "A sophisticated trilby made of wool felt.",
+      "price": 44.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Visor",
+      "description": "A sporty visor made of lightweight polyester.",
+      "price": 9.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Bucket Hat",
+      "description": "A trendy bucket hat made of cotton twill.",
+      "price": 24.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Newsboy Cap",
+      "description": "A vintage newsboy cap made of herringbone fabric.",
+      "price": 34.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Snapback",
+      "description": "A classic snapback made of wool blend fabric.",
+      "price": 24.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    },
+    {
+      "name": "Knit Hat",
+      "description": "A warm knit hat made of soft acrylic yarn.",
+      "price": 19.99,
+      "image": "https://images.unsplash.com/photo-1573164574572-1a6f2ca5c7d9"
+    }
+  ]
+}
