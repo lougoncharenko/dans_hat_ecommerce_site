@@ -15,11 +15,11 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           source={product.image}
           style={{ maxHeight: '200px', objectFit: 'contain' }}
         />
-        <VerticalStack>
-        <Text variant="heading3xl" as="h2">{product.name}</Text>
+        <VerticalStack inlineAlign="center">
+        <Text variant="headingXl" as="h2">{product.name}</Text>
         <Text variant="bodySm" as="p">{product.description}</Text>
           <VerticalStack gap="5">
-          <Text variant="bodySm" as="p" fontWeight="semibold">${product.price}</Text>
+          <Text variant="bodyLg" as="p" fontWeight="semibold">${product.price}</Text>
           </VerticalStack>
         </VerticalStack>
       </div>
