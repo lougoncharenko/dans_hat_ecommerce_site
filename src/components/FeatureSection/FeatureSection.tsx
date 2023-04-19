@@ -6,16 +6,7 @@ export interface IFCProps {};
 
 const FeatureSection: React.FunctionComponent<IFCProps> = props => {
   return (
-    <VerticalStack gap="4">
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          backgroundColor: 'var(--p-color-bg-info-strong)',
-          width: '506px',
-        }}
-      >
-      </div>
+    <VerticalStack align="center" gap="4">
       <h2
       style={{
         marginTop: '50px',
@@ -25,19 +16,15 @@ const FeatureSection: React.FunctionComponent<IFCProps> = props => {
         fontWeight: 'bold'
       }}>
       Featured Products</h2>
-      <section    
-      style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}>
+      <section  className='product_container'>
         <HorizontalStack gap="4" >
-        <Box padding="4" width="550px">
+        <Box id="box1" padding="4" width="550px">
             <FeatureCard />
           </Box>
-          <Box padding="4" width="550px">
+          <Box id="box2" padding="4" width="550px">
             <FeatureCard />
           </Box>
-          <Box padding="4" width="550px">
+          <Box id="box3"padding="4" width="550px">
             <FeatureCard />
           </Box>
         </HorizontalStack>

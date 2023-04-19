@@ -5,7 +5,11 @@ export interface IMediaCardProps {};
 
 const AboutCard: React.FunctionComponent<IMediaCardProps> = props => {
   return (
-    <MediaCard
+    <section
+    style ={{
+      margin: '50px'
+    }}>
+       <MediaCard
       title="Why Buy From Dan?"
       primaryAction={{
         content: 'Find out more',
@@ -21,7 +25,6 @@ const AboutCard: React.FunctionComponent<IMediaCardProps> = props => {
         I think customers like it when someone with real experience and knowledge waits on them. 
         They like the personal attention and I enjoy helping a customer create the perfect hat. When I wait on a customer, 
         I know the hat will be perfect. I know it’s perfect when they smile."
-      popoverActions={[{content: 'Dismiss', onAction: () => {}}]}
     >
       <img
         alt=""
@@ -34,6 +37,9 @@ const AboutCard: React.FunctionComponent<IMediaCardProps> = props => {
         src="https://i.redd.it/lrjjyc9stku81.png"
       />
     </MediaCard>
+
+    </section>
+   
   );
   
 }

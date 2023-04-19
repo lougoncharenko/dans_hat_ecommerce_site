@@ -6,22 +6,24 @@ export interface IFeatureCardProps {};
 
 const FeatureCard: React.FunctionComponent<IFeatureCardProps> = props => {
   return (
-    <AlphaCard padding={{xs: '4', sm: '5', md: '6', lg: '8', xl: '10'}}>
+    <AlphaCard 
+    background="bg-subdued" 
+    padding={{xs: '4', sm: '5', md: '6', lg: '8', xl: '10'}}>
       <img
         alt=""
-        width="80%"
-        height="80%"
+        width="100%"
+        height="100%"
         style={{
           objectFit: 'cover',
           objectPosition: 'center',
         }}
-        src="https://burst.shopifycdn.com/photos/business-woman-smiling-in-office.jpg?width=1850"
+        src="https://cdn.shopify.com/s/files/1/0506/6774/9566/products/havana-hat-tan-front-ss20-2500px_7920e1df-9840-4fef-b414-824a1f252f60_800x.jpg?v=1630616903"
       />
     <Text as="h2" variant="bodyMd" fontWeight='bold' alignment='center'>
-      Insert Item name here
+      Sun hat
     </Text>
     <Text as="h2" variant="bodyMd" fontWeight='bold' alignment='center'>
-      Insert Price name here
+      $24.99
     </Text>
     <section    
     style={{
