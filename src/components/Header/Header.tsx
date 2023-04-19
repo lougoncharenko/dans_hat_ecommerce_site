@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Header = () => {
+export interface IHeaderProps {};
+
+const Header: React.FunctionComponent<IHeaderProps> = props => {
   return (
-    <div>Header</div>
+   <Header>
+    <h1>Header</h1>
+   </Header>
   )
 }
 

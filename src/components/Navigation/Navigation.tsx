@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import {Link} from '@shopify/polaris';
-import {TopBar, ActionList, Icon, Frame, Text} from '@shopify/polaris';
+import {TopBar, ActionList, Frame, Text} from '@shopify/polaris';
 import hatLogo from '../../assets/hatlogo.png';
 
 export interface INavigationProps {};

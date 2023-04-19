@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from '../components/Header/Header';
 
 export interface IHomePageProps {};
 
 const HomePage: React.FunctionComponent<IHomePageProps> = props => {
-  return <div>Home</div>
+  return (
+    <Header/>
+  )
 }
 
 export default HomePage
