@@ -2,9 +2,13 @@ import React from 'react';
 import {AlphaCard, Text} from '@shopify/polaris';
 import {Button} from '@shopify/polaris';
 
-export interface IFeatureCardProps {};
+export interface IFeatureCardProps {
+  name: string;
+  image: string;
+  price: number
+};
 
-const FeatureCard: React.FunctionComponent<IFeatureCardProps> = props => {
+const FeatureCard: React.FunctionComponent<IFeatureCardProps> = ({name, image, price}) => {
   return (
     <AlphaCard 
     background="bg-subdued" 
@@ -17,13 +21,13 @@ const FeatureCard: React.FunctionComponent<IFeatureCardProps> = props => {
           objectFit: 'cover',
           objectPosition: 'center',
         }}
-        src="https://cdn.shopify.com/s/files/1/0506/6774/9566/products/havana-hat-tan-front-ss20-2500px_7920e1df-9840-4fef-b414-824a1f252f60_800x.jpg?v=1630616903"
+        src={image}
       />
     <Text as="h2" variant="bodyMd" fontWeight='bold' alignment='center'>
-      Sun hat
+      {name}
     </Text>
     <Text as="h2" variant="bodyMd" fontWeight='bold' alignment='center'>
-      $24.99
+      ${price}
     </Text>
     <section    
     style={{
