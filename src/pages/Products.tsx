@@ -1,24 +1,14 @@
-// import React from 'react';
-
-// export interface IProductsPageProps {};
-
-// const ProductsPage: React.FunctionComponent<IProductsPageProps> = props => {
-//   return <div>Products</div>
-// }
-
-// export default ProductsPage
-
 import React from 'react';
 import { Layout, AlphaCard, Grid } from '@shopify/polaris';
 import ProductCard from '../components/ProductCard/ProductCard';
 import { Product } from '../types/types';
-import productsData from '../data/products.json';
 
 interface Props {
   products: Product[];
+  setProductDetail: (productId: number) => void;
 }
 
-const ProductList: React.FC<Props> = ({ products}) => {
+const ProductList: React.FC<Props> = ({ products, setProductDetail}) => {
   return (
     <Layout>
       <Layout.Section>
@@ -38,6 +28,4 @@ const ProductList: React.FC<Props> = ({ products}) => {
   );
 };
 
-const products = productsData.hats;
-
-export default () => <ProductList products={products} />;
+export default ProductList;

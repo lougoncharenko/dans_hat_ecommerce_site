@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 interface Props {
   product: Product;
-  setProductDetail: (product:Product)=> {};
+  setProductDetail: (productId: number) => void;
 }
 
 const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
@@ -15,10 +15,10 @@ const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
     (newValue: string) => setQuantity(newValue),
     [],
   );
-  
+
   const handleClick:any = () => {
-    setProductDetail(product)
-  } 
+    setProductDetail(product.id)
+  }
 
   return (
     <AlphaCard
@@ -49,12 +49,12 @@ const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
               autoComplete="off"
             />
           <Button primary fullWidth>Add to Cart</Button>
-          <Link to= {`/products/${product.id}`}>     
-           <Button 
-          onClick={ handleClick } 
+          <Link to= {`/products/${product.id}`}>
+           <Button
+          onClick={ handleClick }
           plain>View Full Details</Button>
           </Link>
-    
+
           </VerticalStack>
 
     </AlphaCard>
