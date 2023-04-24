@@ -13,7 +13,9 @@ const AboutCard: React.FunctionComponent<IMediaCardProps> = props => {
       title="Why Buy From Dan?"
       primaryAction={{
         content: 'Find out more',
-        onAction: () => {},
+        onAction: () => {
+          alert('find out more')
+        },
       }}
       description="There’s a certain family feel here at Dan's Hats that you don’t get at other stores. We’re pretty easy-going, 
       friendly and we try to put our customers at ease. I feel very strongly about putting a customer at ease 
