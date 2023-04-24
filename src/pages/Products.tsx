@@ -18,20 +18,7 @@ interface Props {
   products: Product[];
 }
 
-// const ProductList: React.FC<Props> = ({ products }) => {
-//   return (
-//       <Grid columns={{ xs: 1, sm: 2, md: 3 }}>
-//   {products.map((product) => (
-//     <div key={product.name}>
-//       <ProductCard product={product} />
-//     </div>
-//   ))}
-// </Grid>
-//   );
-// };
-
-
-const ProductList: React.FC<Props> = ({ products }) => {
+const ProductList: React.FC<Props> = ({ products}) => {
   return (
     <Layout>
       <Layout.Section>
@@ -40,7 +27,7 @@ const ProductList: React.FC<Props> = ({ products }) => {
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
               {products.map((product) => (
                 <div key={product.name} style={{ padding: '8px', width: '100%', maxWidth: '400px' }}>
-                  <ProductCard product={product} />
+                  <ProductCard product={product} setProductDetail={setProductDetail} />
                 </div>
               ))}
             </div>
