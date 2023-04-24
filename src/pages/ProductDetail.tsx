@@ -24,12 +24,7 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({ product
   return (
     <Container
       style ={{
-        backgroundColor: 'white',
         margin: "35px",
-        borderRadius: '30px',
-        borderColor: 'black',
-        borderWidth: "13px",
-        boxShadow: '5px 5px 5px 5px black',
         display: 'flex',
         justifyContent: 'center',
       }}>
