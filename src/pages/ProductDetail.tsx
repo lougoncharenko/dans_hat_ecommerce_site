@@ -29,7 +29,16 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({ product
         justifyContent: 'center',
       }}>
       <Stack gap="60px" sx={{ flexDirection: { lg: 'row' }, p: '20px', alignItems: 'center' }}>
-        <img src={product.image} alt={product.name} loading="lazy" className="detail-image" height="500px" width="500px"/>
+        <img
+        alt={product.name}
+        width="50%"
+        height="auto"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+        src={product.image}
+      />
         <Stack sx={{ gap: { lg: '35px', xs: '20px' } }}>
           <Typography sx={{ fontSize: { lg: '50px', xs: '30px' } }} fontWeight={700} textTransform="capitalize">
             {product.name}
