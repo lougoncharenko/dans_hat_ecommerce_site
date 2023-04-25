@@ -1,45 +1,105 @@
-import React from 'react';
-import {AlphaCard, Text} from '@shopify/polaris';
-import {Button} from '@shopify/polaris';
+import React, { useState, useCallback }  from 'react';
+import { AlphaCard, Button, VerticalStack, Text, TextField } from '@shopify/polaris';
+import { Product } from '../../types/types';
+import { Link } from 'react-router-dom';
 
-export interface IFeatureCardProps {
-  name: string;
-  image: string;
-  price: number
-};
+// export interface IFeatureCardProps {
+//   name: string;
+//   image: string;
+//   price: number
+// };
 
-const FeatureCard: React.FunctionComponent<IFeatureCardProps> = ({name, image, price}) => {
+// const FeatureCard: React.FunctionComponent<IFeatureCardProps> = ({name, image, price}) => {
+//   return (
+//     <AlphaCard
+//     background="bg-subdued"
+//     padding={{xs: '4', sm: '5', md: '6', lg: '8', xl: '10'}}>
+//       <img
+//         alt=""
+//         width="100%"
+//         height="100%"
+//         style={{
+//           objectFit: 'cover',
+//           objectPosition: 'center',
+//         }}
+//         src={image}
+//       />
+//     <Text as="h2" variant="bodyMd" fontWeight='bold' alignment='center'>
+//       {name}
+//     </Text>
+//     <Text as="h2" variant="bodyMd" fontWeight='bold' alignment='center'>
+//       ${price}
+//     </Text>
+//     <section
+//     style={{
+//          marginTop: '15px',
+//           display: 'flex',
+//           justifyContent: 'center',
+//         }}>
+//       <Button primary>Add to Cart</Button>
+//     </section>
+
+//   </AlphaCard>
+//   )
+// }
+
+
+interface Props {
+  product: Product;
+  setProductDetail: (productId: number) => void;
+}
+
+const FeatureCard: React.FC<Props> = ({ product, setProductDetail }) => {
+  const [quantity, setQuantity] = useState('1');
+
+  const handleQuantityChange = useCallback(
+    (newValue: string) => setQuantity(newValue),
+    [],
+  );
+
+  const handleClick:any = () => {
+    setProductDetail(product.id)
+  }
+
   return (
-    <AlphaCard 
-    background="bg-subdued" 
+    <AlphaCard
+    background="bg-subdued"
     padding={{xs: '4', sm: '5', md: '6', lg: '8', xl: '10'}}>
       <img
-        alt=""
+        alt={product.name}
         width="100%"
         height="100%"
         style={{
           objectFit: 'cover',
           objectPosition: 'center',
         }}
-        src={image}
+        src={product.image}
       />
-    <Text as="h2" variant="bodyMd" fontWeight='bold' alignment='center'>
-      {name}
+    <Text as="h2" variant="headingMd" alignment='start'>
+    {product.name}
     </Text>
-    <Text as="h2" variant="bodyMd" fontWeight='bold' alignment='center'>
-      ${price}
+    <Text as="h2" variant="bodyLg" fontWeight='bold' alignment='center'>
+    ${product.price}
     </Text>
-    <section    
-    style={{
-         marginTop: '15px',
-          display: 'flex',
-          justifyContent: 'center',
-        }}>
-      <Button primary>Add to Cart</Button>
-    </section>
+    <VerticalStack gap="5">
+             <TextField
+              label="Quantity"
+              type="number"
+              value={quantity}
+              onChange={handleQuantityChange}
+              autoComplete="off"
+            />
+          <Button primary fullWidth>Add to Cart</Button>
+          <Link to= {`/products/${product.id}`}>
+           <Button
+          onClick={ handleClick }
+          plain>View Full Details</Button>
+          </Link>
 
-  </AlphaCard>
-  )
-}
+          </VerticalStack>
+
+    </AlphaCard>
+  );
+};
 
 export default FeatureCard
