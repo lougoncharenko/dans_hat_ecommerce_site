@@ -1,13 +1,19 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import CartHeader from '../components/CartHeader/CartHeader';
-import { useSelector} from 'react-redux';
+import { useAppSelector } from '../redux/hooks/hooks';
 
 
 export interface ICartProps {};
 
-const Cart: React.FunctionComponent<ICartProps> = props => {
-  const cartItems = useSelector((state:any) => state.cart.cartItems);
+const Cart: React.FunctionComponent<ICartProps> = () => {
+  // const cartItems = useAppSelector((state:any) => {
+  //   console.log(state);
+  //   return state.cart.cartItems;
+  // });
+
+  const cartItems = useSelector((state: any) => state.cart.cartItems);
   return (
     <>
     <CartHeader />
@@ -35,7 +41,7 @@ const Cart: React.FunctionComponent<ICartProps> = props => {
                 cartItems.map((item:any) => (
                   <tr>
                   <th><img className= "cart-item-image"src={item.image} alt={item.product_name} /></th>
-                  <th>{item.productName}</th>
+                  <th>{item.name}</th>
                   <th>${item.price}</th>
                   <th>{item.quantity}</th>
                   <th> 

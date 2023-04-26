@@ -14,9 +14,11 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <Provider store={store}>
+  <React.StrictMode>  
     <AppProvider i18n={enTranslations}>
-        <App />
+     <Provider store={store}>
+       <App />
+     </Provider> 
     </AppProvider> 
-  </Provider>
+  </React.StrictMode>
  ) 

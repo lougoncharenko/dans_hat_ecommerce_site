@@ -1,5 +1,7 @@
+import { CartItems } from "./CartItems"
+
 export interface InitialState {
-  cartItems: any,
+  cartItems: CartItems[],
   totalAmount: number,
   totalQuantity: number
 }

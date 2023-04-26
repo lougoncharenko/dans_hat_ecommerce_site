@@ -19,7 +19,7 @@ const Router: React.FunctionComponent<IRouterProps> = (props) => {
       <Route path="home" element={<Home/>}/>
       <Route path="products" element={<Products products={products} setProductDetail={ setProductDetail }/>}/>
       <Route path="products/:id" element={<ProductDetail productDetail={ productDetail } products={products} />}/>
-      <Route path="cart" element={<Cart/>} />
+      <Route path="cart" element={<Cart />} />
     </Routes>
     </BrowserRouter>
 

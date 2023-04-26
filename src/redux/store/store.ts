@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cartSlice from '../cartSlice/cartSlice';
 
-
-// The Redux store is created using the configureStore function from Redux Toolkit.
-// configureStore requires that we pass in a reducer argument.
 const store = configureStore({
-  reducer: {
+  reducer:{
    cart: cartSlice,
   },
 });
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
 
 export default store;

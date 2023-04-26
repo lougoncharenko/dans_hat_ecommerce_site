@@ -1,14 +1,10 @@
 import React, { useState, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
-import { cartActions } from '../../redux/cartSlice/cartSlice';
+import { addItems, setCart } from '../../redux/cartSlice/cartSlice';
 import { AlphaCard, Button, VerticalStack, Image, Text, TextField } from '@shopify/polaris';
 import { Product } from '../../types/types';
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../../redux/hooks/hooks';
 
-
-interface Function {
-  addToCart: () => {}
-}
 interface Props {
   product: Product;
   setProductDetail: (productId: number) => void;
@@ -16,7 +12,7 @@ interface Props {
 
 const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
   const [quantity, setQuantity] = useState('1');
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleQuantityChange = useCallback(
     (newValue: string) => setQuantity(newValue),
@@ -28,11 +24,12 @@ const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
   }
 
   const addToCart = () => {
-    dispatch(cartActions.addItem({
+    dispatch(addItems({
       id: product.id,
-      productName: product.name,
+      name: product.name,
       price: product.price,
       image: product.image,
+      cost: product.price
     })
     );
     console.log('item add')
