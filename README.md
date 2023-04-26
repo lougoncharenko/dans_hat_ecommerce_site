@@ -18,6 +18,7 @@
 - [React Router](https://www.npmjs.com/package/react-router-dom)
 - [Polaris](https://polaris.shopify.com/) 
 - [React-redux](https://react-redux.js.org) 
+- [Redux toolkit](https://redux-toolkit.js.org/)
 - [Google Fonts](https://fonts.google.com/) 
 
 ## Features

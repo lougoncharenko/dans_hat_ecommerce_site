@@ -1,7 +1,10 @@
 import React, { useState, useCallback } from 'react';
+import { addItems, setCart } from '../../redux/cartSlice/cartSlice';
 import { AlphaCard, Button, VerticalStack, Image, Text, TextField } from '@shopify/polaris';
 import { Product } from '../../types/types';
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../../redux/hooks/hooks';
+import {  toast } from 'react-toastify';
 
 interface Props {
   product: Product;
@@ -10,6 +13,7 @@ interface Props {
 
 const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
   const [quantity, setQuantity] = useState('1');
+  const dispatch = useAppDispatch();
 
   const handleQuantityChange = useCallback(
     (newValue: string) => setQuantity(newValue),
@@ -18,6 +22,19 @@ const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
 
   const handleClick:any = () => {
     setProductDetail(product.id)
+  }
+
+  const addToCart = () => {
+    dispatch(addItems({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      cost: product.price
+    })
+    );
+    toast.success('Product added successfully');
+    console.log('item add')
   }
 
   return (
@@ -48,7 +65,10 @@ const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
               onChange={handleQuantityChange}
               autoComplete="off"
             />
-          <Button primary fullWidth>Add to Cart</Button>
+          <Button 
+          primary fullWidth
+          onClick={addToCart}
+          >Add to Cart</Button>
           <Link to= {`/products/${product.id}`}>
            <Button
           onClick={ handleClick }
