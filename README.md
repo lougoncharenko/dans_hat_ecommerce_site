@@ -20,6 +20,7 @@
 - [React-redux](https://react-redux.js.org) 
 - [Redux toolkit](https://redux-toolkit.js.org/)
 - [Google Fonts](https://fonts.google.com/) 
+- [React Toastify](https://www.npmjs.com/package/react-toastify)
 
 ## Features
 
