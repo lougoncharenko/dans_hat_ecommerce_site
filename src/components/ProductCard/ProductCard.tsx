@@ -4,6 +4,7 @@ import { AlphaCard, Button, VerticalStack, Image, Text, TextField } from '@shopi
 import { Product } from '../../types/types';
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../../redux/hooks/hooks';
+import {  toast } from 'react-toastify';
 
 interface Props {
   product: Product;
@@ -32,6 +33,7 @@ const ProductCard: React.FC<Props> = ({ product, setProductDetail }) => {
       cost: product.price
     })
     );
+    toast.success('Product added successfully');
     console.log('item add')
   }
 
