@@ -2,15 +2,19 @@ import React from 'react';
 import Header from '../components/Header/Header';
 import AboutCard from '../components/AboutSection/MediaCard/AboutCard';
 import FC from '../components/FeatureSection/FeatureSection';
+import { Product } from '../types/types';
 
-export interface IHomePageProps {};
+interface Props {
+  featureProducts: Product[];
+  setProductDetail: (productId: number) => void;
+};
 
-const HomePage: React.FunctionComponent<IHomePageProps> = props => {
+const HomePage: React.FC<Props> = ({ featureProducts, setProductDetail }) => {
   return (
     <>
     <Header/>
     <AboutCard />
-    <FC/>
+    <FC featureProducts={featureProducts} setProductDetail={setProductDetail}/>
     </>
   )
 }

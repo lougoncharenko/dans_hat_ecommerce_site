@@ -1,11 +1,11 @@
 import {Routes, Route, Navigate, BrowserRouter} from 'react-router-dom'
 import React, {useState} from 'react';
-import { Product } from '../types/types';
 import Home from '../pages/Home';
 import Cart from '../pages/Cart';
 import ProductDetail from '../pages/ProductDetail';
 import Products from '../pages/Products';
 import { products } from '../data/products';
+import { featureProducts } from '../data/featureProducts';
 
 export interface IRouterProps {};
 
@@ -16,7 +16,7 @@ const Router: React.FunctionComponent<IRouterProps> = (props) => {
     <BrowserRouter>
     <Routes>
       <Route path="/" element ={<Navigate to='/home' />} />
-      <Route path="home" element={<Home/>}/>
+      <Route path="home" element={<Home featureProducts={featureProducts} setProductDetail={ setProductDetail }/>}/>
       <Route path="products" element={<Products products={products} setProductDetail={ setProductDetail }/>}/>
       <Route path="products/:id" element={<ProductDetail productDetail={ productDetail } products={products} />}/>
       <Route path="cart" element={<Cart/>} />
