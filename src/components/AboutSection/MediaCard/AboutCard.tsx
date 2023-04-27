@@ -14,7 +14,7 @@ const AboutCard: React.FunctionComponent<IMediaCardProps> = props => {
       primaryAction={{
         content: 'Find out more',
         onAction: () => {
-          alert('find out more')
+          window.location.href='/products'
         },
       }}
       description="There’s a certain family feel here at Dan's Hats that you don’t get at other stores. We’re pretty easy-going, 
