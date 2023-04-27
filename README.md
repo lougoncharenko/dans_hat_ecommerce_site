@@ -23,5 +23,14 @@
 - [React Toastify](https://www.npmjs.com/package/react-toastify)
 
 ## Features
+- Users can browse through a variety of cart
+- Users can add items to cart
+- Users can view featured products on the home page
+- Users can read more about Dan's hats
 
-## Challenges and Learnings 
+## Future Ideas for improvements
+- add a delete button on the cart page
+- make the checkout button functional
+- import Stripe and use it for the checkout page
+- use authorization to login and sign up
+- create a login and login page
