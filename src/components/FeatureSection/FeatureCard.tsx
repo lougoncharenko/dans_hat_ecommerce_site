@@ -1,7 +1,10 @@
 import React, { useState, useCallback }  from 'react';
-import { AlphaCard, Button, VerticalStack, HorizontalGrid, Text, TextField } from '@shopify/polaris';
+import { Button, VerticalStack, HorizontalGrid, Text, TextField } from '@shopify/polaris';
 import { Product } from '../../types/types';
 import { Link } from 'react-router-dom';
+import { addItems} from '../../redux/cartSlice/cartSlice';
+import { useAppDispatch } from '../../redux/hooks/hooks';
+import {  toast } from 'react-toastify';
 
 interface Props {
   product: Product;
@@ -10,6 +13,7 @@ interface Props {
 
 const FeatureCard: React.FC<Props> = ({ product, setProductDetail }) => {
   const [quantity, setQuantity] = useState('1');
+  const dispatch = useAppDispatch();
 
   const handleQuantityChange = useCallback(
     (newValue: string) => setQuantity(newValue),
@@ -20,43 +24,20 @@ const FeatureCard: React.FC<Props> = ({ product, setProductDetail }) => {
     setProductDetail(product.id)
   }
 
+  const addToCart = () => {
+    dispatch(addItems({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      cost: product.price
+    })
+    );
+    toast.success('Product added successfully');
+    console.log('item add')
+  }
+
   return (
-    // <AlphaCard
-    // background="bg-subdued"
-    // padding={{xs: '4', sm: '5', md: '6', lg: '8', xl: '10'}}>
-    //   <img
-    //     alt={product.name}
-    //     width="100%"
-    //     height="100%"
-    //     style={{
-    //       objectFit: 'cover',
-    //       objectPosition: 'center',
-    //     }}
-    //     src={product.image}
-    //   />
-    // <Text as="h2" variant="headingMd" alignment='start'>
-    // {product.name}
-    // </Text>
-    // <Text as="h2" variant="bodyLg" fontWeight='bold' alignment='center'>
-    // ${product.price}
-    // </Text>
-    // <VerticalStack gap="5">
-    //          <TextField
-    //           label="Quantity"
-    //           type="number"
-    //           value={quantity}
-    //           onChange={handleQuantityChange}
-    //           autoComplete="off"
-    //         />
-    //       <Button primary fullWidth>Add to Cart</Button>
-    //       <Link to= {`/products/${product.id}`}>
-    //        <Button
-    //       onClick={ handleClick }
-    //       plain>View Full Details</Button>
-    //       </Link>
-
-    //       </VerticalStack>
-
     <HorizontalGrid columns={['twoThirds', 'oneThird']}>
       <VerticalStack gap="3" align="start">
       <img
@@ -82,7 +63,10 @@ const FeatureCard: React.FC<Props> = ({ product, setProductDetail }) => {
         <Text as="h2" variant="bodyLg" fontWeight='bold' alignment='center'>
           ${product.price}
         </Text>
-          <Button primary size="slim">Add to Cart</Button>
+          <Button 
+          primary size="slim"
+          onClick={addToCart}
+          >Add to Cart</Button>
         </VerticalStack>
     </HorizontalGrid>
   );
