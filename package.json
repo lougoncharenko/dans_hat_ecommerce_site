@@ -5,7 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.12.1",
+    "@mui/material": "^5.12.2",
     "@reduxjs/toolkit": "^1.9.5",
     "@shopify/polaris": "^10.45.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -24,6 +24,7 @@
     "react-toastify": "^9.1.2",
     "reactstrap": "^9.1.9",
     "redux": "^4.2.1",
+    "styled-components": "^5.3.10",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -52,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.26",
     "file-loader": "^6.2.0"
   }
 }

@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { addItems, setCart } from '../../redux/cartSlice/cartSlice';
+import { addItems} from '../../redux/cartSlice/cartSlice';
 import { AlphaCard, Button, VerticalStack, Image, Text, TextField } from '@shopify/polaris';
 import { Product } from '../../types/types';
 import { Link } from 'react-router-dom';
