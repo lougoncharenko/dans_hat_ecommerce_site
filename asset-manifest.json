@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/dans_hat_ecommerce_site/static/css/main.8cc9d0c6.css",
+    "main.js": "/dans_hat_ecommerce_site/static/js/main.c671191d.js",
+    "static/media/hatlogo.png": "/dans_hat_ecommerce_site/static/media/hatlogo.408699111be8acabe6f2.png",
+    "index.html": "/dans_hat_ecommerce_site/index.html",
+    "main.8cc9d0c6.css.map": "/dans_hat_ecommerce_site/static/css/main.8cc9d0c6.css.map",
+    "main.c671191d.js.map": "/dans_hat_ecommerce_site/static/js/main.c671191d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8cc9d0c6.css",
+    "static/js/main.c671191d.js"
+  ]
+}
